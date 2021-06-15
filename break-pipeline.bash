@@ -36,11 +36,11 @@ else
         echo "===================================="
         echo "          |Critical | High | Medium    "
         echo "------------------------------------"
-        echo "vulnerabilities:     | ${arr_critical[3]}       | ${arr_high[3]}    | ${arr_medium[4]}"
+        echo "vulnerabilities:  | ${arr_critical[3]}       | ${arr_high[3]}    | ${arr_medium[4]}"
         echo "------------------------------------"
-        echo "threshold: | $critical_threshold      | $high_threshold    | $medium_threshold "
+        echo "threshold:    | $critical_threshold      | $high_threshold    | $medium_threshold "
         echo " "
-
+        echo "Please correct the security vulnerabilities in the container and rerun your pipeline. You can browse the report using the Job Artifacts tab."
         echo "Exiting the pipeline with RC=99" >&2
         exit 99
     fi
