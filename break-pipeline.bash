@@ -18,7 +18,7 @@ medium=$(cat lw-verbose.txt| grep 'Size' | grep 'Medium')
 arr_medium=($medium)
 
 if  [ -z "$arr_critical" ] && [ -z "$arr_high" ] && [ -z "$arr_medium" ]; then
-    echo "Good news! This image has no vulnerabilities."
+    echo "Good news! This image has no vulnerabilities. The container security stage/gate passed - continuing with pipeline. "
     
 else
     cat lw-verbose.txt| grep 'CONTAINER IMAGE DETAILS' | awk '{print $1, $2, $3}'
