@@ -30,15 +30,15 @@ else
     echo " "
 
     if ((${arr_critical[3]} < $critical_threshold)) && ((${arr_high[3]} < $high_threshold)) && ((${arr_medium[4]} < $medium_threshold)); then
-        echo "The test was passed - continuing with pipeline"
+        echo "The container security stage/gate passed - continuing with pipeline"
     else
-        echo "One or more of the SEVERITY exceeds the allowable threshold"
+        echo "One or more of the CONTAINER SEVERITY settings exceeds the allowable threshold by the DevSecOps policy"
         echo "===================================="
         echo "          |Critical | High | Medium    "
         echo "------------------------------------"
-        echo "vulns     | ${arr_critical[3]}       | ${arr_high[3]}    | ${arr_medium[4]}"
+        echo "vulnerabilities:     | ${arr_critical[3]}       | ${arr_high[3]}    | ${arr_medium[4]}"
         echo "------------------------------------"
-        echo "threshold | $critical_threshold      | $high_threshold    | $medium_threshold "
+        echo "threshold: | $critical_threshold      | $high_threshold    | $medium_threshold "
         echo " "
 
         echo "Exiting the pipeline with RC=99" >&2
